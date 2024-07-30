@@ -20,6 +20,7 @@ const getClient = () => {
 const getDb = async (clientPromise: Promise<MongoClient>) => {
   const client = await clientPromise;
   const connection = await client.connect();
+
   return connection.db(env.DB_NAME);
 };
 
@@ -32,7 +33,6 @@ if (env.NODE_ENV === "development") {
   if (!global._clientPromise) {
     global._clientPromise = getClient();
   }
-
   clientPromise = global._clientPromise;
 
   if (!global._dbPromise) {
@@ -40,8 +40,6 @@ if (env.NODE_ENV === "development") {
   }
 
   dbPromise = global._dbPromise;
-
-  console.log("-----------------------------------");
 } else {
   // In production mode, it's best to not use a global variable.
   clientPromise = getClient();

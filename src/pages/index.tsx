@@ -1,11 +1,11 @@
 import Head from "next/head";
-// import Link from "next/link";
+
 import { api } from "~/utils/api";
 
 export default function Home() {
-  // const getAll = api.example.getAll.useQuery();
+  const testPost = api.carTable.test.useMutation();
 
-  const testPost = api.example.test.useMutation();
+  const marksAndCount = api.carTable.getMarksCarsAndCount.useQuery();
 
   return (
     <>
