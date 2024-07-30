@@ -1,16 +1,18 @@
 import Head from "next/head";
 
 import { api } from "~/utils/api";
+import SettingsCard from "./components/SettingsCard";
+import { CarsTableProvider } from "./components/context/CarsTableProvider";
 
 export default function Home() {
-  const testPost = api.carTable.test.useMutation();
+  const marksAndCount = api.carTable.getMarksCarsAndCount.useQuery();
 
-  const marksAndCount = api.carTable.getCarsFromModelsAndMarks.useQuery({
-    models: ["Q7"],
-    limit: 2,
-    offset: 0,
-    mark: "Audi",
-  });
+  // const marksAndCount = api.carTable.getCarsFromModelsAndMarks.useQuery({
+  //   models: ["Q7"],
+  //   limit: 2,
+  //   offset: 0,
+  //   mark: "Audi",
+  // });
 
   return (
     <>
@@ -25,15 +27,10 @@ export default function Home() {
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
           </h1>
         </div>
-
-        <button
-          onClick={() => {
-            testPost.mutate();
-          }}
-        >
-          Click
-        </button>
       </main>
+      <CarsTableProvider>
+        <SettingsCard />
+      </CarsTableProvider>
     </>
   );
 }

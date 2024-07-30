@@ -22,7 +22,7 @@
 ### dev
 
 ```bash
-cp .env.example .env // Добавить url БД!
+cp .env.example .env // Добавить url тестовой БД!
 npm install -g pnpm
 pnpm i —frozen-lockfile
 pnpm dev
