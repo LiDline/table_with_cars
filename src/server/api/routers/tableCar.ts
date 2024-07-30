@@ -1,4 +1,3 @@
-// import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import getModelsCarsAndCount from "./tableCar/getModelsCarsAndCount";
 import { GetModelsCarsAndCountResponseSchema } from "~/server/validator/schema/getModelsCarsAndCount";
@@ -7,6 +6,11 @@ import {
   GetModelsForMarkResponseSchema,
 } from "~/server/validator/schema/getModelsForMark";
 import getModelsForMark from "./tableCar/getModelsForMark";
+import {
+  GetCarsFromModelsAndMarksRequestSchema,
+  GetCarsFromModelsAndMarksResponseSchema,
+} from "~/server/validator/schema/getCarsFromModelsAndMarks";
+import getCarsFromModelsAndMarks from "./tableCar/getCarsFromModelsAndMarks";
 
 export const tableCarRouter = createTRPCRouter({
   test: publicProcedure.mutation(() => {
@@ -31,7 +35,18 @@ export const tableCarRouter = createTRPCRouter({
     .query(async ({ ctx, input }) => {
       const db = ctx.db;
 
-      const res = await getModelsForMark(input.model, db);
+      const res = await getModelsForMark(input.mark, db);
+
+      return res;
+    }),
+
+  getCarsFromModelsAndMarks: publicProcedure
+    .input(GetCarsFromModelsAndMarksRequestSchema)
+    .output(GetCarsFromModelsAndMarksResponseSchema)
+    .query(async ({ ctx, input }) => {
+      const db = ctx.db;
+
+      const res = await getCarsFromModelsAndMarks(input, db);
 
       return res;
     }),
