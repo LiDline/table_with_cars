@@ -5,7 +5,9 @@ import { api } from "~/utils/api";
 export default function Home() {
   const testPost = api.carTable.test.useMutation();
 
-  const marksAndCount = api.carTable.getMarksCarsAndCount.useQuery();
+  const marksAndCount = api.carTable.getModelsForMark.useQuery({
+    model: "Audi",
+  });
 
   return (
     <>
