@@ -40,6 +40,8 @@ if (env.NODE_ENV === "development") {
   }
 
   dbPromise = global._dbPromise;
+
+  console.log("-----------------------------------");
 } else {
   // In production mode, it's best to not use a global variable.
   clientPromise = getClient();
