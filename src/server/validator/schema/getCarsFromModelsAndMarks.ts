@@ -17,7 +17,7 @@ export const CarSchema = z.object({
     transmission: z.string(),
     fuel: z.string(),
   }),
-  drive: z.string(),
+  drive: z.string().or(z.literal(null)),
   equipmentName: z.string(),
   price: z.number(),
   createdAt: z.date(),

@@ -1,5 +1,8 @@
 import { type z } from "zod";
-import type { GetModelsCarsAndCountResponseSchema } from "../schema/getModelsCarsAndCount";
+import type {
+  GetModelsCarsAndCountResponseSchema,
+  ModelsCarsAndCountSchema,
+} from "../schema/getModelsCarsAndCount";
 import type { GetModelsForMarkResponseSchema } from "../schema/getModelsForMark";
 import type {
   CarSchema,
@@ -22,4 +25,7 @@ export type GetCarsFromModelsAndMarksRequest = z.infer<
 export type GetCarsFromModelsAndMarksResponse = z.infer<
   typeof GetCarsFromModelsAndMarksResponseSchema
 >;
+
 export type Car = z.infer<typeof CarSchema>;
+
+export type ModelsCarsAndCount = z.infer<typeof ModelsCarsAndCountSchema>;

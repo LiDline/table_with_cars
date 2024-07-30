@@ -1,6 +1,5 @@
 import { z } from "zod";
-import { MarkSchema } from "./getModelsCarsAndCount";
 
-export const GetModelsForMarkRequestSchema = z.object({ mark: MarkSchema });
+export const GetModelsForMarkRequestSchema = z.object({ mark: z.string() });
 
 export const GetModelsForMarkResponseSchema = z.array(z.string());

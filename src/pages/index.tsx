@@ -5,8 +5,6 @@ import SettingsCard from "./components/SettingsCard";
 import { CarsTableProvider } from "./components/context/CarsTableProvider";
 
 export default function Home() {
-  const marksAndCount = api.carTable.getMarksCarsAndCount.useQuery();
-
   // const marksAndCount = api.carTable.getCarsFromModelsAndMarks.useQuery({
   //   models: ["Q7"],
   //   limit: 2,
