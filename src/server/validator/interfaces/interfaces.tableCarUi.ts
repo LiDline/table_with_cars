@@ -21,3 +21,7 @@ export interface CarsTableContextProps {
   setLimit: React.Dispatch<React.SetStateAction<number>>;
   setOffset: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface ChildrenProps {
+  children: React.ReactNode;
+}

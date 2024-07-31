@@ -4,7 +4,7 @@ import { LoadingSymbol } from "./context/utils/Loading";
 import SelectMark from "./SelectMark";
 
 export default function SettingsCard() {
-  const { marksAndCount, models, cars } = useCarsTableContext();
+  const { marksAndCount, models } = useCarsTableContext();
 
   return (
     <div className="mt-10 flex justify-center p-6">
