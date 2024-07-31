@@ -4,6 +4,7 @@ import { LoadingSymbol } from "./utils/Loading";
 import modification from "./func/modification";
 import formatDate from "./func/formatDate";
 import Card from "./utils/Card";
+import Limit from "./Limit";
 
 export default function TableCars() {
   const { cars } = useCarsTableContext();
@@ -55,6 +56,8 @@ export default function TableCars() {
           Загрузка таблицы... <LoadingSymbol />
         </div>
       )}
+
+      <Limit />
     </Card>
   );
 }
