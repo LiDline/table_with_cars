@@ -10,31 +10,28 @@ export default function Pagination() {
 
   const pageCount = Math.ceil(items.length / limit);
 
-  const handlePageClick = (event) => {
+  const handlePageClick = (event: unknown) => {
     const newOffset = (event.selected * limit) % items.length;
 
     setOffset(newOffset);
   };
 
   return (
-    <>
+    <div>
       <ReactPaginate
         breakLabel="..."
         nextLabel=">"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
         pageCount={pageCount}
         previousLabel="<"
         containerClassName="join"
-        pageClassName="join-item btn"
+        pageLinkClassName="join-item btn"
         previousLinkClassName="join-item btn"
         nextLinkClassName="join-item btn"
-        breakClassName="join-item btn"
         breakLinkClassName="join-item btn"
-        activeClassName="join-item btn btn-active"
+        activeLinkClassName="join-item btn btn-active"
+        disabledClassName="btn-disabled"
       />
-    </>
+    </div>
   );
-
-  return;
 }

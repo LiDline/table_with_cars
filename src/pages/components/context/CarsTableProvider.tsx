@@ -42,8 +42,16 @@ export const CarsTableProvider: React.FC<CarsTableProps> = ({ children }) => {
 
   const [limit, setLimit] = React.useState<number>(LIMITS[0] ?? 20);
   const [offset, setOffset] = React.useState<number>(0);
-  const countCars =
-    marksAndCount?.filter((v) => v._id === currentMark)[0]?.count ?? 0;
+
+  const countCars = api.carTable.getCountCarsFromModelsAndMarks.useQuery(
+    {
+      mark: currentMark!,
+      models: selectedModels,
+    },
+    {
+      enabled: !!currentMark && !!models,
+    }
+  ).data?.count;
 
   const cars = api.carTable.getCarsFromModelsAndMarks.useQuery(
     {
@@ -59,7 +67,7 @@ export const CarsTableProvider: React.FC<CarsTableProps> = ({ children }) => {
     setSelectedModels([]);
     setOffset(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentMark]);
+  }, [currentMark, models]);
 
   //---------------------------------------------
 

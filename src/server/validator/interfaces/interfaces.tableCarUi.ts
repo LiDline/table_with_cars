@@ -14,7 +14,7 @@ export interface CarsTableContextProps {
   selectedModels: (string | null)[] | undefined;
   limit: number;
   offset: number;
-  countCars: number;
+  countCars: number | undefined;
 
   setCurrentMark: React.Dispatch<React.SetStateAction<string | undefined>>;
   setSelectedModels: React.Dispatch<React.SetStateAction<(string | null)[]>>;

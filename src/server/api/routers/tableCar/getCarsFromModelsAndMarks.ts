@@ -4,6 +4,7 @@ import type {
   GetCarsFromModelsAndMarksRequest,
   GetCarsFromModelsAndMarksResponse,
 } from "~/server/validator/interfaces/interfaces.tableCarApi";
+import customFilter from "./func/customFilter";
 
 export default async function getCarsFromModelsAndMarks(
   input: GetCarsFromModelsAndMarksRequest,
@@ -11,8 +12,7 @@ export default async function getCarsFromModelsAndMarks(
 ): Promise<GetCarsFromModelsAndMarksResponse> {
   const { limit, offset, mark, models } = input;
 
-  const filter: { mark: string; model?: { $in: string[] } } = { mark };
-  if (models?.length) filter.model = { $in: models };
+  const filter = customFilter(mark, models);
 
   const cars = await db
     .collection<Car>("stock")

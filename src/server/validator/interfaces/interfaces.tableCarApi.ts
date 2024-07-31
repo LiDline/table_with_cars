@@ -9,6 +9,10 @@ import type {
   GetCarsFromModelsAndMarksRequestSchema,
   GetCarsFromModelsAndMarksResponseSchema,
 } from "../schema/getCarsFromModelsAndMarks";
+import type {
+  GetCountCarsFromModelsAndMarksResponseSchema,
+  ModelsSchema,
+} from "../schema/getCountCarsFromModelsAndMarks";
 
 export type GetModelsCarsAndCountResponse = z.infer<
   typeof GetModelsCarsAndCountResponseSchema
@@ -29,3 +33,11 @@ export type GetCarsFromModelsAndMarksResponse = z.infer<
 export type Car = z.infer<typeof CarSchema>;
 
 export type ModelsCarsAndCount = z.infer<typeof ModelsCarsAndCountSchema>;
+
+export type GetCountCarsFromModelsAndMarksResponse = z.infer<
+  typeof GetCountCarsFromModelsAndMarksResponseSchema
+>;
+
+export type GetCountCarsFromModelsAndMarks = { _id: string; count: number }[];
+
+export type Models = z.infer<typeof ModelsSchema>;
