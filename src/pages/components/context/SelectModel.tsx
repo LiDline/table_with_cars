@@ -1,7 +1,14 @@
+import React from "react";
 import { useCarsTableContext } from "./useCarsTableContext";
 
 export default function SelectModel() {
-  const { models, selectedModels, setSelectedModels } = useCarsTableContext();
+  const { models, selectedModels, setSelectedModels, currentMark } =
+    useCarsTableContext();
+
+  React.useEffect(() => {
+    setSelectedModels([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentMark]);
 
   const id = "ChoiceModel";
 
