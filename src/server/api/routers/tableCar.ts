@@ -18,12 +18,6 @@ import {
 import getCountCarsFromModelsAndMarks from "./tableCar/getCountCarsFromModelsAndMarks";
 
 export const tableCarRouter = createTRPCRouter({
-  test: publicProcedure.mutation(() => {
-    console.log("hello!");
-
-    return;
-  }),
-
   getMarksCarsAndCount: publicProcedure
     .output(GetModelsCarsAndCountResponseSchema)
     .query(async ({ ctx }) => {
