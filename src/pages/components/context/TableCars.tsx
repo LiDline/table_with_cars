@@ -5,6 +5,7 @@ import modification from "./func/modification";
 import formatDate from "./func/formatDate";
 import Card from "./utils/Card";
 import Limit from "./Limit";
+import Pagination from "./Pagination";
 
 export default function TableCars() {
   const { cars } = useCarsTableContext();
@@ -12,7 +13,10 @@ export default function TableCars() {
   return (
     <Card InnerPosition="center">
       {!!cars ? (
-        <div className="justify-center overflow-x-auto">
+        <div
+          className="justify-center overflow-x-auto"
+          style={{ maxHeight: "600px" }}
+        >
           <table className="table  text-lg">
             <thead className="text-lg">
               <tr>
@@ -57,7 +61,13 @@ export default function TableCars() {
         </div>
       )}
 
-      <Limit />
+      <div className="join relative flex items-center justify-end ">
+        <div className="mr-8">
+          <Pagination />
+        </div>
+
+        <Limit />
+      </div>
     </Card>
   );
 }

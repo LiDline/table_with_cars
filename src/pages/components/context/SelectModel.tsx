@@ -2,13 +2,7 @@ import React from "react";
 import { useCarsTableContext } from "./useCarsTableContext";
 
 export default function SelectModel() {
-  const { models, selectedModels, setSelectedModels, currentMark } =
-    useCarsTableContext();
-
-  React.useEffect(() => {
-    setSelectedModels([]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentMark]);
+  const { models, selectedModels, setSelectedModels } = useCarsTableContext();
 
   const id = "ChoiceModel";
 
@@ -34,7 +28,7 @@ export default function SelectModel() {
                     <p className="text-black">{m ?? "Не указана модель"}</p>
                     <button
                       id={`${m}_clear`}
-                      className="btn-ghost btn-sm btn-circle btn"
+                      className="btn-ghost btn btn-sm btn-circle"
                       onClick={() => {
                         setSelectedModels((prev) => {
                           const newData = prev?.filter((p) => p != m);
@@ -61,7 +55,7 @@ export default function SelectModel() {
           {selectedModels?.length ? (
             <button
               id={`${id}_clear`}
-              className="btn-ghost btn-sm btn"
+              className="btn-ghost btn btn-sm"
               onClick={() => {
                 setSelectedModels([]);
               }}
@@ -76,7 +70,7 @@ export default function SelectModel() {
               </svg>
             </button>
           ) : (
-            <button className="btn-ghost btn-sm btn" type="button">
+            <button className="btn-ghost btn btn-sm" type="button">
               <svg
                 className="h-5 w-5"
                 viewBox="0 0 24 24"
