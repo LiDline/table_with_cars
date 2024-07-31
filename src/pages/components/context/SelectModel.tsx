@@ -93,7 +93,7 @@ export default function SelectModel() {
         ) : (
           <label
             htmlFor={id}
-            className="absolute start-1 top-1/2 z-10 origin-[0] -translate-y-1/2 scale-100 transform px-2 text-lg  peer-focus:top-1 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600"
+            className="absolute start-1 top-1/2 z-10 origin-[0] -translate-y-1/2 scale-100 transform bg-transparent px-2 text-lg peer-focus:top-1 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:bg-slate-100 peer-focus:px-2 peer-focus:text-blue-600"
           >
             {"Модели"}
           </label>
