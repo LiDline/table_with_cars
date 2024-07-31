@@ -21,7 +21,7 @@ export default function SelectModel() {
               {selectedModels.map((m, i) => (
                 <span
                   key={i}
-                  className="badge mb-1 flex h-full border-none bg-[#223354] bg-opacity-10"
+                  className="badge mb-1 h-full flex-row border-none bg-[#223354] bg-opacity-10"
                 >
                   <div className="flex flex-row items-center justify-between p-1">
                     <p className="text-black">{m ?? "Не указана модель"}</p>
@@ -107,9 +107,12 @@ export default function SelectModel() {
           <li className="w-full" key={i}>
             <button
               type="button"
+              className={selectedModels?.includes(m) ? "active" : ""}
               onClick={() => {
                 setSelectedModels((prev) => {
-                  const newArray = prev.includes(m) ? prev : [...prev, m];
+                  const newArray = prev.includes(m)
+                    ? prev.filter((p) => p != m)
+                    : [...prev, m];
 
                   return newArray;
                 });
