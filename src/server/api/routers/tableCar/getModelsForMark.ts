@@ -1,11 +1,8 @@
 import type { Db } from "mongodb";
-import type {
-  GetModelsForMarkResponse,
-  Mark,
-} from "~/server/validator/interfaces/interfaces.tableCarApi";
+import type { GetModelsForMarkResponse } from "~/server/validator/interfaces/interfaces.tableCarApi";
 
 export default async function getModelsForMark(
-  mark: Mark,
+  mark: string,
   db: Db
 ): Promise<GetModelsForMarkResponse> {
   const models = (await db

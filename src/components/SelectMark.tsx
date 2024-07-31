@@ -4,7 +4,7 @@ export default function SelectMark() {
   const { marksAndCount, currentMark, setCurrentMark } = useCarsTableContext();
 
   return (
-    <ul className="menu menu-vertical rounded-box lg:menu-horizontal bg-white">
+    <ul className="menu menu-vertical rounded-box bg-white lg:menu-horizontal">
       {marksAndCount?.map((val) => {
         return (
           <li key={val._id}>
