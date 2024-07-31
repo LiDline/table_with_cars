@@ -1,6 +1,6 @@
+import TableCars from "~/components/TableCars";
 import SettingsCard from "../components/SettingsCard";
-import { CarsTableProvider } from "../components/context/lib/CarsTableProvider";
-import TableCars from "../components/context/TableCars";
+import { CarsTableProvider } from "../components/context/CarsTableProvider";
 
 export default function Home() {
   return (

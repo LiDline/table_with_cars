@@ -1,6 +1,7 @@
 import { LIMITS } from "~/CONST";
-import { useCarsTableContext } from "./useCarsTableContext";
+
 import React from "react";
+import { useCarsTableContext } from "./context/useCarsTableContext";
 
 export default function Limit() {
   const { limit, setLimit } = useCarsTableContext();

@@ -1,11 +1,12 @@
 import { TABLE_HEADERS } from "~/CONST";
-import { useCarsTableContext } from "./useCarsTableContext";
-import { LoadingSymbol } from "./utils/Loading";
-import modification from "./func/modification";
-import formatDate from "./func/formatDate";
-import Card from "./utils/Card";
+
 import Limit from "./Limit";
 import Pagination from "./Pagination";
+import { useCarsTableContext } from "./context/useCarsTableContext";
+import Card from "./utils/Card";
+import modification from "./func/modification";
+import formatDate from "./func/formatDate";
+import { LoadingSymbol } from "./utils/Loading";
 
 export default function TableCars() {
   const { cars } = useCarsTableContext();
@@ -56,20 +57,20 @@ export default function TableCars() {
               </tbody>
             </table>
           </div>
-
-          <div className="join relative flex items-center justify-end ">
-            <div className="mr-8">
-              <Pagination />
-            </div>
-
-            <Limit />
-          </div>
         </div>
       ) : (
         <div>
           Загрузка таблицы... <LoadingSymbol />
         </div>
       )}
+
+      <div className="join relative flex items-center justify-end ">
+        <div className="mr-8">
+          <Pagination />
+        </div>
+
+        <Limit />
+      </div>
     </Card>
   );
 }

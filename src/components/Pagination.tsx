@@ -1,7 +1,6 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
-
-import { useCarsTableContext } from "./useCarsTableContext";
+import { useCarsTableContext } from "./context/useCarsTableContext";
 
 export default function Pagination() {
   const { countCars, setOffset, limit } = useCarsTableContext();
@@ -14,6 +13,7 @@ export default function Pagination() {
   const handlePageClick = (event: any) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const newOffset = (event.selected * limit) % items.length;
+    console.log(newOffset);
 
     setOffset(newOffset);
   };

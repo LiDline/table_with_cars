@@ -1,5 +1,5 @@
 import React from "react";
-import { useCarsTableContext } from "./useCarsTableContext";
+import { useCarsTableContext } from "./context/useCarsTableContext";
 
 export default function SelectModel() {
   const { models, selectedModels, setSelectedModels } = useCarsTableContext();

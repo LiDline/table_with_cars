@@ -1,7 +1,7 @@
-import SelectModel from "./context/SelectModel";
 import { useCarsTableContext } from "./context/useCarsTableContext";
-import { LoadingSymbol } from "./context/utils/Loading";
+import { LoadingSymbol } from "./utils/Loading";
 import SelectMark from "./SelectMark";
+import SelectModel from "./SelectModel";
 
 export default function SettingsCard() {
   const { marksAndCount, models } = useCarsTableContext();

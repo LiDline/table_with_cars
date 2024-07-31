@@ -2,7 +2,7 @@ import React from "react";
 
 import type { CarsTableContextProps } from "~/server/validator/interfaces/interfaces.tableCarUi";
 
-import { CarsTableContext } from "../useCarsTableContext";
+import { CarsTableContext } from "./useCarsTableContext";
 import { api } from "~/utils/api";
 import { LIMITS } from "~/CONST";
 
