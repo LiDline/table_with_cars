@@ -101,7 +101,7 @@ export default function SelectModel() {
       </div>
       <ul
         className="dropdown-content menu z-[11]  max-h-[200px] w-full flex-row overflow-y-auto rounded-box bg-slate-50 p-2 shadow blur-none"
-        style={{ scrollbarWidth: "none" }}
+        style={{ scrollbarWidth: "thin", scrollbarColor: "#4a5568 #edf2f7" }}
       >
         {models?.map((m, i) => (
           <li className="w-full" key={i}>
