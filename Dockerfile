@@ -22,6 +22,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./standalone/public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./standalone/.next/public
 
 
-EXPOSE 3000
+EXPOSE 80
+ENV PORT 80
+ENV HOSTNAME "0.0.0.0"
 
 CMD ["node", "/app/standalone/server.js"]
