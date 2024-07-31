@@ -40,7 +40,7 @@ export const CarsTableProvider: React.FC<CarsTableProps> = ({ children }) => {
 
   //---------------------Cars--------------------
 
-  const [limit, setLimit] = React.useState<number>(LIMITS.shift() ?? 20);
+  const [limit, setLimit] = React.useState<number>(1);
   const [offset, setOffset] = React.useState<number>(0);
   const countPage = Math.ceil(
     marksAndCount?.filter((v) => v._id === currentMark)[0]?.count ?? 0

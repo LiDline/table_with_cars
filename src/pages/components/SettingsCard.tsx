@@ -1,3 +1,8 @@
+import { useCarsTableContext } from "./context/useCarsTableContext";
+import SelectMark from "./SelectMark";
+
 export default function SettingsCard() {
-  return;
+  const { marksAndCount } = useCarsTableContext();
+
+  return <>{!!marksAndCount && <SelectMark />}</>;
 }

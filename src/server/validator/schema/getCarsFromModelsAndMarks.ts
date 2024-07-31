@@ -10,7 +10,7 @@ export const GetCarsFromModelsAndMarksRequestSchema = z.object({
 export const CarSchema = z.object({
   _id: z.string(),
   mark: z.string(),
-  model: z.string(),
+  model: z.string().or(z.literal(null)),
   engine: z.object({
     power: z.number(),
     volume: z.number(),
