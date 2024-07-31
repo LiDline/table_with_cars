@@ -12,7 +12,7 @@ export default async function getCarsFromModelsAndMarks(
   const { limit, offset, mark, models } = input;
 
   const filter: { mark: string; model?: { $in: string[] } } = { mark };
-  if (models) filter.model = { $in: models };
+  if (models?.length) filter.model = { $in: models };
 
   const cars = await db
     .collection<Car>("stock")

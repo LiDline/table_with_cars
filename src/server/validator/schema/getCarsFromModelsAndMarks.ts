@@ -4,7 +4,7 @@ export const GetCarsFromModelsAndMarksRequestSchema = z.object({
   limit: z.number(),
   offset: z.number(),
   mark: z.string(),
-  models: z.array(z.string()).default([]).optional(),
+  models: z.array(z.string().or(z.literal(null))).default([]),
 });
 
 export const CarSchema = z.object({
