@@ -17,6 +17,9 @@
 
 Проект реализован с использованием архитектуры T3 - monorepo. За основу взят шаблон [T3 App with MongoDB](https://github.com/periakteon/t3-stack-mongodb). Фронтенд выполнен на Next.js, а бэкенд на tRPC.
 
+## Пример
+#### https://table-with-cars.vercel.app/
+
 ## Запуск
 
 ### dev
